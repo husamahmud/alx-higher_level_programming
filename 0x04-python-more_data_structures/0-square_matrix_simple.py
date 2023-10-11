@@ -1,11 +1,8 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    new_matrix = []
+    new_mtx = []
 
-    for row in range(3):
-        new_row = []
-        for col in range(3):
-            new_row.append(matrix[row][col] ** 2)
-        new_matrix.append(new_row)
+    for i in matrix:
+        new_mtx.append(list(map(lambda n: n * n, i)))
 
-    return new_matrix
+    return new_mtx
