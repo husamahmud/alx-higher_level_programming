@@ -44,7 +44,3 @@ def matrix_divided(matrix, div):
         new_matrix.append(new_row)
 
     return new_matrix
-
-
-if __name__ == '__main__':
-    print(matrix_divided([[1, 2, 3], [4, 5, 6]], '4'))
