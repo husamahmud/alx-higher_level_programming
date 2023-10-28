@@ -1,0 +1,44 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+----------------------
+
+# First import funciton from the module:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+# Test case 1: Adding two integers
+	>>> add_integer(1, 2)
+	3
+
+# Test case 2: Adding a positive integer and a negative integer
+	>>> add_integer(100, -2)
+	98
+
+# Test case 3: Adding a single integer (using the default value for b)
+	>>> add_integer(2)
+	100
+
+# Test case 4: Adding a float and an integer
+	>>> add_integer(100.3, -2)
+	98
+
+# Test case 6: Adding None (no value provided for a)
+	>>> add_integer("rad", 0)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+# Test case 7: Adding None (no value provided for v)
+	>>> add_integer(0, "rad")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+# Test case 8: Adding two large integers
+	>>> add_integer(999999999999999, 1)
+	1000000000000000
+
+# Test case 9: Adding a negative float and a positive integer
+	>>> add_integer(-5.5, 10)
+	5
