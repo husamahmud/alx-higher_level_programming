@@ -35,7 +35,7 @@ Using ``add_integer``
 	...
 	TypeError: b must be an integer
 
-# Test case 8: Adding two large integers
+# Test case 8: Dividing matrix elements by infinity should raise an OverflowError.
 	>>> add_integer(float('inf'), 1)
 	Traceback (most recent call last):
 	...
@@ -44,4 +44,10 @@ Using ``add_integer``
 # Test case 9: Adding a negative float and a positive integer
 	>>> add_integer(-5.5, 10)
 	5
+	
+# Test case 10: Adding a negative float and a positive integer
+	>>> add_integer(-5.5, [1])
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
 
