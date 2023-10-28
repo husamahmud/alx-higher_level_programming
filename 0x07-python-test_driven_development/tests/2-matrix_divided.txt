@@ -37,7 +37,7 @@ Using ``matrix_divided``
 	...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-# Test case 6: Invalid matrix with non-numeric element should raise TypeError.
+# Test case 6: Dividing matrix elements by infinity should raise an OverflowError.
 	>>> print(matrix_divided([[1, 2, 3], [4, 5, 6]], float('inf')))
 	Traceback (most recent call last):
 	...
