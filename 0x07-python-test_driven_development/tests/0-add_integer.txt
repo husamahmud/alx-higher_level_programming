@@ -14,7 +14,6 @@ Using ``add_integer``
 # Test case 2: Float overflow
 	>>> add_integer(float('NaN'), 10)
 	Traceback (most recent call last):
-	...
 	ValueError: cannot convert float NaN to integer
 
 # Test case 3: Adding a single integer (using the default value for b)
@@ -28,30 +27,25 @@ Using ``add_integer``
 # Test case 6: Adding None (no value provided for a)
 	>>> add_integer('1', 0)
 	Traceback (most recent call last):
-	...
 	TypeError: a must be an integer
 
 # Test case 7: Adding None (no value provided for v)
 	>>> add_integer(0, "rad")
 	Traceback (most recent call last):
-	...
 	TypeError: b must be an integer
 
 # Test case 8: Dividing matrix elements by infinity should raise an OverflowError.
 	>>> add_integer(float('inf'), 1)
 	Traceback (most recent call last):
-	...
 	OverflowError: cannot convert float infinity to integer
 
 # Test case 9: Missing two arguments
 	>>> add_integer()
 	Traceback (most recent call last):
-	...	
 	TypeError: add_integer() missing 1 required positional argument: 'a'
 	
 # Test case 10: Adding a negative float and a positive integer
 	>>> add_integer(-5.5, [1])
 	Traceback (most recent call last):
-	...
 	TypeError: b must be an integer
 
