@@ -10,35 +10,29 @@ Using ``matrix_divided``
 # Test case 1: Missing arguments
 	>>> print(matrix_divided())
 	Traceback (most recent call last):
-	...
 	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
 # Test case 2: Missing divisor argument
 	>>> print(matrix_divided([[1, 2, 3], [4, 5, 6]]))
 	Traceback (most recent call last):
-	...
 	TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
 # Test case 3: Irregular matrix size
 	>>> print(matrix_divided([[1, 2, 3], [4, 5, 6, 7]], 4))
 	Traceback (most recent call last):
-	...
 	TypeError: Each row of the matrix must have the same size
 
 # Test case 4: Division by zero
 	>>> print(matrix_divided([[1, 2, 3], [4, 5, 6]], 0))
 	Traceback (most recent call last):
-	...
 	ZeroDivisionError: division by zero
 
 # Test case 5: Non-numeric elements in the matrix
 	>>> print(matrix_divided([[1, 2, 3], [4, 5, '6']], 3))
 	Traceback (most recent call last):
-	...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	
 # Test case 6: Non-numeric divisor
 	>>> print(matrix_divided([[1, 2, 3], [4, 5, 6]], '3'))
 	Traceback (most recent call last):
-	...
 	TypeError: div must be a number
