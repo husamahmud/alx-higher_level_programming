@@ -1,0 +1,31 @@
+The ``5-text_indentation`` module
+======================
+
+Using ``text_indentation``
+----------------------
+
+# First import funciton from the module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    
+# Test case 1: Missing argument
+	>>> text_indentation()
+	Traceback (most recent call last):
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
+	
+# Test case 2: Invalid input
+    >>> text_indentation(55)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+# Test case 3: Emtpy string
+	>>> text_indentation('')
+	 
+	 
+# Test case 4: Text with trailing spaces
+	>>> text_indentation(" 		Hello World!		")
+	Hello World!
+	 
+
+# Test case 5: Valid input
+	>>> text_indentation("Hello!")
+	Hello!
