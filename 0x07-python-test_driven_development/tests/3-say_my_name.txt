@@ -7,26 +7,25 @@ Using ``say_my_name``
 # First import funciton from the module:
     >>> say_my_name = __import__('3-say_my_name').say_my_name
 
-# Test case 1: Providing an empty string as the last name
-	>>> say_my_name("", "Smith")
-	My name is  Smith
-
-# Test case 2: Providing an empty string as the first name
-	>>> say_my_name("Walter", "")
-	My name is Walter 
-	
-# Test case 3: Providing only the first name
-	>>> say_my_name("Walter")
-	My name is Walter 
-
-# Test case 4: Providing a non-string value as the first name
-	>>> say_my_name(1, "White")
+# Test case 1: Missing arguments
+	>>> say_my_name()
 	Traceback (most recent call last):
-	...
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+# Test case 2: Missing last_name argument
+	 >>> say_my_name("Walter")
+	 My name is Walter 
+
+# Test case 3: first_name is not string
+	>>> say_my_name(1)
+	Traceback (most recent call last):
 	TypeError: first_name must be a string
 
-# Test case 5: Providing a non-string value as the last name
+# Test case 4: last_name is not string
 	>>> say_my_name("Walter", 1)
 	Traceback (most recent call last):
-	...
 	TypeError: last_name must be a string
+
+# Test case 5: Valid input
+	>>> say_my_name("Walter", "White")
+	My name is Walter White
