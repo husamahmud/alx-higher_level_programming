@@ -11,9 +11,11 @@ Using ``add_integer``
 	>>> add_integer(1, 2)
 	3
 
-# Test case 2: Adding a positive integer and a negative integer
-	>>> add_integer(100, -2)
-	98
+# Test case 2: Float overflow
+	>>> add_integer(float('NaN'), 10)
+	Traceback (most recent call last):
+	...
+	ValueError: cannot convert float NaN to integer
 
 # Test case 3: Adding a single integer (using the default value for b)
 	>>> add_integer(2)
@@ -24,7 +26,7 @@ Using ``add_integer``
 	98
 
 # Test case 6: Adding None (no value provided for a)
-	>>> add_integer("rad", 0)
+	>>> add_integer('1', 0)
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
@@ -41,9 +43,11 @@ Using ``add_integer``
 	...
 	OverflowError: cannot convert float infinity to integer
 
-# Test case 9: Adding a negative float and a positive integer
-	>>> add_integer(-5.5, 10)
-	5
+# Test case 9: Missing two arguments
+	>>> add_integer()
+	Traceback (most recent call last):
+	...	
+	TypeError: add_integer() missing 1 required positional argument: 'a'
 	
 # Test case 10: Adding a negative float and a positive integer
 	>>> add_integer(-5.5, [1])
