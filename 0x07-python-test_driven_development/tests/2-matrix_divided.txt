@@ -7,38 +7,38 @@ Using ``matrix_divided``
 # First import funciton from the module:
     >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
-# Test case 1: Division by zero should raise ZeroDivisionError.
-	>>> print(matrix_divided([[1, 2, 3], [4, 5, 6]] , 0))
+# Test case 1: Missing arguments
+	>>> print(matrix_divided())
 	Traceback (most recent call last):
 	...
-	ZeroDivisionError: division by zero
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
-# Test case 2: Non-numeric divisor should raise TypeError.
-	>>> print(matrix_divided([[1, 2, 3], [4, 5, 6]], "t"))
+# Test case 2: Missing divisor argument
+	>>> print(matrix_divided([[1, 2, 3], [4, 5, 6]]))
 	Traceback (most recent call last):
 	...
-	TypeError: div must be a number
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
-# Test case 3: Rows with different sizes should raise TypeError.
-	>>> print(matrix_divided([[1, 2, 3], [4, 5, 6, 7]], 1))
+# Test case 3: Irregular matrix size
+	>>> print(matrix_divided([[1, 2, 3], [4, 5, 6, 7]], 4))
 	Traceback (most recent call last):
 	...
 	TypeError: Each row of the matrix must have the same size
 
-# Test case 4: Invalid matrix with nested list should raise TypeError.
-	>>> print(matrix_divided([[1, 2, 3], [[1, 2, 3]]], 1))
+# Test case 4: Division by zero
+	>>> print(matrix_divided([[1, 2, 3], [4, 5, 6]], 0))
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
+
+# Test case 5: Non-numeric elements in the matrix
+	>>> print(matrix_divided([[1, 2, 3], [4, 5, '6']], 3))
 	Traceback (most recent call last):
 	...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-# Test case 5: Invalid matrix with non-numeric element should raise TypeError.
-	>>> print(matrix_divided([[1, 2, 3], [4, 'H', 6]], 3))
+	
+# Test case 6: Non-numeric divisor
+	>>> print(matrix_divided([[1, 2, 3], [4, 5, 6]], '3'))
 	Traceback (most recent call last):
 	...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-# Test case 6: Dividing matrix elements by infinity should raise an OverflowError.
-	>>> print(matrix_divided([[1, 2, 3], [4, 5, 6]], float('inf')))
-	Traceback (most recent call last):
-	...
-	OverflowError: cannot convert float infinity to integer
+	TypeError: div must be a number
