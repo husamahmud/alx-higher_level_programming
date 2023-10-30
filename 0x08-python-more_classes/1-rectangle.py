@@ -21,7 +21,7 @@ class Rectangle:
 
         Raises:
             TypeError (int): If width or height is not an integer.
-            ValueError (int): If width or height is less than 0. 
+            ValueError (int): If width or height is less than 0.
         """
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
