@@ -65,10 +65,10 @@ class Rectangle:
 
     def __del__(self):
         """
-        Print the message `Bye rectangle...` when an instance is deleted
+        Print the message `Bye rectangle...` when an instance is deleted.
 
         Returns:
-            None
+            None.
         """
         print("Bye rectangle...")
 
