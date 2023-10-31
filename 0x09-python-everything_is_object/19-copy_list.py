@@ -1,4 +1,3 @@
-if __name__ == '__main__':
-    s1 = 'Best school'
-    s2 = s1
-    print(s1 is s2)
+#!/usr/bin/python3
+def copy_list(l):
+    return l.copy()
