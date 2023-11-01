@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This module provides functions for mathematical operations on integers.
+"""
 
 
 def add_integer(a, b=98):

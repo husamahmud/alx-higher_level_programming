@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module provides a function for reformat text
+"""
+
 
 def text_indentation(text):
     """

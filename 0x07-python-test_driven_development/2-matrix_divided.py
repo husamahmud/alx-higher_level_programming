@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module provides a function for dividing elements of a matrix.
+"""
+
 
 def matrix_divided(matrix, div):
     """
