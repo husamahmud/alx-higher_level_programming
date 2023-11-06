@@ -56,6 +56,7 @@ Using ``MyList``
 	AttributeError: 'list' object has no attribute 'print_sorted'
 
 # Test case 8:
+	>>> MyList = __import__('1-my_list').MyList
 	>>> my_list = MyList()
 	>>> my_list.append(5)
 	>>> my_list.append(1)
