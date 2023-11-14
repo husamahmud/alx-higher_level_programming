@@ -9,6 +9,7 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """Initialize a Square object."""
+        self.size = size
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -18,11 +19,15 @@ class Square(Rectangle):
     @property
     def size(self):
         """Getter size."""
-        return self.width
+        return self.__width
 
     @size.setter
     def size(self, val):
         """Setter size."""
+        if not isinstance(val, int):
+            raise TypeError("width must be an integer")
+        if val <= 0:
+            raise ValueError("width must be > 0")
         self.__height = val
         self.__width = val
 
