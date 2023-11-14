@@ -9,13 +9,13 @@ class Base:
     """Base class that serves as the base for all other classes."""
     __nb_objects = 0
 
-    def __init__(self, id=None):
+    def __init__(self, id_=None):
         """Initializes an instance of the Base class."""
         if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
         else:
-            self.id = id
+            self.id = id_
 
     @staticmethod
     def to_json_string(list_dictionaries):
