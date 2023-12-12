@@ -8,7 +8,7 @@ CREATE TABLE
 	);
 
 INSERT INTO
-	gsecond_table (id, name, score)
+	second_table (id, name, score)
 VALUES
 	(1, 'John', 10),
 	(2, 'Alex', 3),
