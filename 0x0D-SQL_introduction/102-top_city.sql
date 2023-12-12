@@ -7,9 +7,9 @@ FROM
 WHERE
 	MONTH = 7
 	OR MONTH = 8
-ORDER BY
-	avg_temp DESC
 GROUP BY
 	city
+ORDER BY
+	avg_temp DESC
 LIMIT
 	3;
