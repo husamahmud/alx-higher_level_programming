@@ -2,8 +2,15 @@
 SELECT
 	id, name
 FROM
-	states
+	cities
 WHERE
-	name = `California`
+	state_id = (
+		SELECT
+			id
+		FROM
+			states
+		WHERE
+			name = `California`
+	)
 ORDER BY
-	id DESC;
+	id ASC;
