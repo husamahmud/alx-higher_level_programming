@@ -10,7 +10,7 @@ WHERE
 		FROM
 			states
 		WHERE
-			name = `California`
+			name = 'California'
 	)
 ORDER BY
 	id;
