@@ -8,4 +8,4 @@ FROM
 WHERE
 	tv_genres.name = 'Comedy'
 ORDER BY
-	tv_shows.title;
+	tv_shows.title ASC;
