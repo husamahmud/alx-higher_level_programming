@@ -1,4 +1,4 @@
---lists all Comedy shows in the database
+-- lists all Comedy shows in the database
 SELECT
 	tv_shows.title
 FROM
