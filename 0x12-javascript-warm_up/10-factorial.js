@@ -4,4 +4,8 @@ function fact (n) {
   return parseInt(n) * fact(parseInt(n) - 1);
 }
 
-console.log(fact(process.argv[2]));
+if (isNaN(process.argv[2])) {
+  console.log(1);
+} else {
+  console.log(fact(process.argv[2]));
+}
