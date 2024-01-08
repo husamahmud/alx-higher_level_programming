@@ -2,6 +2,6 @@
 if (process.argv.length === 2 || process.argv.length === 3) {
   console.log(0);
 } else {
-  const maxNum = Number.max(process.argv);
-  console.log(maxNum);
+  process.argv.sort((a, b) => b - a);
+  console.log(process.argv[3]);
 }
