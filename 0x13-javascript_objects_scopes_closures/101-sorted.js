@@ -2,9 +2,10 @@
 const { dict } = require('./101-data.js');
 
 const myDict = {};
-Object.entries(dict).forEach(([key, value]) => {
-  if (!myDict[value]) myDict[value] = [];
-  myDict[value].push(key);
-});
+for (const userId in dict) {
+  const cnt = dict[userId];
+  if (myDict[cnt]) myDict[cnt].push(userId);
+  else myDict[cnt] = [userId];
+}
 
 console.log(myDict);
