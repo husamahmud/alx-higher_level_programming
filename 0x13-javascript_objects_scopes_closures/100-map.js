@@ -1,5 +1,6 @@
 #!/usr/bin/node
-const { list } = require('./100-date.js');
-const myList = list.map((num, idx) => num * idx);
+const { list } = require('./100-data.js');
+
+const l = list.map((el, i) => el * i);
 console.log(list);
-console.log(myList);
+console.log(l);
