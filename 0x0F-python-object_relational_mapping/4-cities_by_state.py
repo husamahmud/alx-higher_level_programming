@@ -12,7 +12,7 @@ if __name__ == '__main__':
                                  db=argv[3])
 
     cursor = connection.cursor()
-    cursor.execute("""SELECT cities.id, cities.name, state.name
+    cursor.execute("""SELECT cities.id, cities.name, states.name
                       FROM cities, states
                       WHERE cities.id = states.id""")
 
