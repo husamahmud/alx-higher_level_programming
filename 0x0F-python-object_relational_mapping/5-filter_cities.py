@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     rows = cursor.fetchall()
     for row in rows:
-        if row[2] == argv[3]:
+        if row[2] == argv[4]:
             print(row)
 
     cursor.close()
