@@ -9,12 +9,12 @@ if __name__ == "__main__":
                          passwd=argv[2], db=argv[3])
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execute(
+        f"SELECT * FROM states WHERE name={argv[4]} ORDER BY id ASC")
 
     rows = cursor.fetchall()
     for row in rows:
-        if row[1] == argv[4]:
-            print(row)
+        print(row)
 
     cursor.close()
     db.close()
