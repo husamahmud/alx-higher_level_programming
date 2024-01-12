@@ -12,7 +12,7 @@ if __name__ == '__main__':
                                  db=argv[3])
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    
+
     rows = cursor.fetchall()
     for row in rows:
         if row[1] == argv[4]:
