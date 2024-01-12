@@ -17,9 +17,11 @@ if __name__ == '__main__':
                       JOIN states ON cities.state_id = states.id""")
 
     rows = cursor.fetchall()
+    res = []
     for row in rows:
         if row[2] == argv[4]:
-            print(row)
+            res.append(row[2])
+    print(", ".join(res))
 
     cursor.close()
     connection.close()
