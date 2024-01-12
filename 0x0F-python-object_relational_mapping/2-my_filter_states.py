@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
     cursor.execute("""SELECT * FROM states
-                    WHERE name LIKE '{}'
+                    WHERE name LIKE BINARY '{}'
                     ORDER BY id""".format(argv[4]))
 
     rows = cursor.fetchall()
