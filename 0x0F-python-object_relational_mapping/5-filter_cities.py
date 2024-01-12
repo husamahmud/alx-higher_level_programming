@@ -12,15 +12,16 @@ if __name__ == '__main__':
                                  db=argv[3])
 
     cursor = connection.cursor()
-    cursor.execute("""SELECT cities.id, cities.name, states.name
-                      FROM cities
-                      JOIN states ON cities.state_id = states.id""")
+    cursor.execute("""SELECT cities.name
+                    FROM cities
+                    LEFT JOIN states ON cities.state_id = states.id
+                    WHERE states.name = %s
+                    ORDER BY cities.id ASC""", (argv[4],))
 
     rows = cursor.fetchall()
     res = []
     for row in rows:
-        if row[2] == argv[4]:
-            res.append(row[2])
+        res.append(row[0])
     print(", ".join(res))
 
     cursor.close()
