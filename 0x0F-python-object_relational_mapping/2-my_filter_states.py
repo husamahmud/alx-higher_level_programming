@@ -9,9 +9,9 @@ if __name__ == "__main__":
                          passwd=argv[2], db=argv[3])
 
     cursor = db.cursor()
-    cursor.execute(
-        "SELECT * FROM states WHERE name = %s ORDER BY id ASC".format(
-            name=argv[4]))
+    cursor.execute("""SELECT * FROM states
+                    WHERE states.name LIKE BINARY '{}'
+                    ORDER BY states.id""".format(argv[4]))
 
     rows = cursor.fetchall()
     for row in rows:
