@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""lists first State objects from the database hbtn_0e_6_usa
-"""
+"""prints the State object with the name passed as argument
+from the database hbtn_0e_6_usa"""
 
 
 import sys
@@ -19,8 +19,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    record = session.query(State).order_by(State.id).first()
-    if record:
-        print(f"{record.id}: {record.name}")
+    # can use filter_by(name=sys.argv[4])
+    state = session.query(State).filter(State.name == sys.argv[4]).first()
+    if state:
+        print(f"{state.id}")
     else:
-        print("Nothing")
+        print("Not found")

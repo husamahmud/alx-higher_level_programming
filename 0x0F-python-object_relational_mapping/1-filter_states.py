@@ -1,22 +1,20 @@
 #!/usr/bin/python3
-"""lists all states from the database hbtn_0e_0_usa."""
-from sys import argv
+"""lists all states with a name starting with N (upper N) from
+the database hbtn_0e_0_usa"""
+
+
+import sys
 import MySQLdb
 
-if __name__ == "__main__":
-    connection = MySQLdb.connect(host="localhost",
-                                 user=argv[1],
-                                 passwd=argv[2],
-                                 db=argv[3],
-                                 port=3306)
-
-    cursor = connection.cursor()
-    cursor.execute("""SELECT * FROM states ORDER BY id ASC""")
-
-    rows = cursor.fetchall()
-    for row in rows:
-        if row[1][0] == "N":
+if __name__ == '__main__':
+    args = sys.argv
+    conn = MySQLdb.connect(host="localhost", port=3306, user=args[1],
+                           passwd=args[2], db=args[3])
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    query_rows = cur.fetchall()
+    for row in query_rows:
+        if row[1][0] == 'N':
             print(row)
-
-    cursor.close()
-    connection.close()
+    cur.close()
+    conn.close()
