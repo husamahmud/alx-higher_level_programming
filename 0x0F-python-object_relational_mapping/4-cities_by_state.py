@@ -11,15 +11,14 @@ if __name__ == "__main__":
                                  port=3306)
 
     cursor = connection.cursor()
-    query = ("SELECT id, name FROM cities "
+    query = ("SELECT * FROM cities "
              "JOIN states ON cities.states_id = states.id "
              "ORDER BY id ASC")
     cursor.execute(query)
 
     rows = cursor.fetchall()
     for row in rows:
-        if row[1] == argv[4]:
-            print(row)
+        print(row)
 
     cursor.close()
     connection.close()
