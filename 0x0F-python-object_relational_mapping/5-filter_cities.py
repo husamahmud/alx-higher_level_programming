@@ -11,7 +11,7 @@ if __name__ == "__main__":
                                  port=3306)
 
     cursor = connection.cursor()
-    query = "SELECT name FROM states "
+    query = "SELECT name FROM cities"
     cursor.execute(query)
 
     rows = cursor.fetchall()
