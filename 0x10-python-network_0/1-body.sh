@@ -3,6 +3,6 @@
 status_code=$(curl -s -o /dev/null -w "%{http_code}" "$1")
 
 if [ "$status_code" -eq 200 ]; then
-	body=$(curl -s "$1")
+	body=$(curl -sL "$1")
 	echo "$body"
 fi
