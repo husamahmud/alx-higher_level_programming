@@ -7,8 +7,6 @@ def find_peak(list_of_integers):
     n = len(list_of_integers)
     if n == 0:
         return None
-    elif n == 1:
-        return list_of_integers[0]
 
     left = 0
     right = n - 1
