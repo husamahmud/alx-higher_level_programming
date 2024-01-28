@@ -10,14 +10,14 @@ def find_peak(list_of_integers):
     elif n == 1:
         return list_of_integers[0]
 
-    l = 0
-    r = n - 1
-    while l < r:
-        m = (l + r) // 2
+    left = 0
+    right = n - 1
+    while left < right:
+        m = (left + right) // 2
 
         if list_of_integers[m] < list_of_integers[m + 1]:
-            l = m + 1
+            left = m + 1
         else:
-            r = m
+            right = m
 
-    return list_of_integers[l]
+    return list_of_integers[left]
