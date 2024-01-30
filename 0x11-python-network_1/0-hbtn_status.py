@@ -9,8 +9,8 @@ if __name__ == '__main__':
         body = res.read()
 
     print('Body response:')
-    print('    - type:', type(body))
-    print('    - content:', body)
-    print('    - utf8 content:', body.decode('utf-8'))
+    print('\t- type:', type(body))
+    print('\t- content:', body)
+    print('\t- utf8 content:', body.decode('utf-8'))
 
     res.close()
