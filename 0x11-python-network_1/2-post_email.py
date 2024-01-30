@@ -14,5 +14,4 @@ if __name__ == '__main__':
     req = Request(url, data=data, method='POST')
 
     with urlopen(req) as res:
-        body = res.read().decode('utf-8')
-        print('Your email is:', body)
+        print(res.read().decode('utf-8'))
