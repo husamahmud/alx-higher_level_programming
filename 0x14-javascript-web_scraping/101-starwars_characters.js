@@ -4,7 +4,7 @@ const request = require('request');
 
 const url = 'https://swapi-api.alx-tools.com/api/films/';
 
-function getCharacterNames(characters, index) {
+function getCharacterNames (characters, index) {
   if (index < characters.length) {
     request.get(characters[index], (err, res, body) => {
       if (err) {
