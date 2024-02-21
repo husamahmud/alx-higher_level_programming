@@ -1,9 +1,6 @@
 #!/usr/bin/node
-const request = require('request');
-
-const file = process.argv[1];
-request({ url: file, encoding: 'UTF-8' }, (err, res, body) => {
+const fs = require('fs');
+fs.readFile('cisfun', 'utf-8', (err, data) => {
   if (err) console.error(err);
-  else if (res.statusCode !== 200) console.error(`Request failed. ${res.statusCode}`);
-  else console.log(body);
+  console.log(data);
 });
